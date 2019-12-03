@@ -35,9 +35,9 @@ public class QuestionActivity extends AppCompatActivity {
             setUpQuestions();
         }
 
-        if (questionNumber == questions.size()) {
+        /*if (questionNumber == questions.size()) {
             end();
-        }
+        }*/
 
         List<String> answers = questions.get(questionNumber).getAnswers();
 
@@ -53,7 +53,7 @@ public class QuestionActivity extends AppCompatActivity {
         questionText.setText(questions.get(questionNumber).getQuestion());
 
         first.setOnClickListener(unused -> {
-            score += 0;
+            //score += 0;
             maxScore += 3;
 
             /*if (questionNumber + 1 == questions.size()) {
@@ -82,6 +82,8 @@ public class QuestionActivity extends AppCompatActivity {
             end();
         });
 
+        second.setText(answers.get(1));
+
         third.setOnClickListener(unused -> {
             score += 2;
             maxScore += 3;
@@ -101,6 +103,8 @@ public class QuestionActivity extends AppCompatActivity {
             end();
         });
 
+        third.setText(answers.get(2));
+
         fourth.setOnClickListener(unused -> {
             score += 3;
             maxScore += 3;
@@ -114,6 +118,8 @@ public class QuestionActivity extends AppCompatActivity {
             startActivity(intent);*/
             end();
         });
+
+        fourth.setText(answers.get(3));
 
 
 
