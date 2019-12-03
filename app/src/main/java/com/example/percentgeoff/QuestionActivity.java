@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -20,19 +21,27 @@ public class QuestionActivity extends AppCompatActivity {
     Button third;
     Button fourth;
 
+    int questionNumber;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
         Intent oldIntent = getIntent();
-        int questionNumber = oldIntent.getIntExtra("question", -1);
+        questionNumber = oldIntent.getIntExtra("question", -1);
+
+
         if (questionNumber == 0) {
             setUpQuestions();
         }
 
-        if (questionNumber >= questions.size() || questionNumber < 0) {
+        if (questionNumber == questions.size()) {
             end();
         }
+
+        List<String> answers = questions.get(questionNumber).getAnswers();
+
+        Log.d("tag", "didn't end, question: " + questionNumber + ", array size: " + questions.size());
 
         Button first = findViewById(R.id.answer);
         Button second = findViewById(R.id.answer1);
@@ -41,43 +50,72 @@ public class QuestionActivity extends AppCompatActivity {
 
         TextView questionText = findViewById(R.id.questionText);
 
+        questionText.setText(questions.get(questionNumber).getQuestion());
+
         first.setOnClickListener(unused -> {
             score += 0;
             maxScore += 3;
 
+            /*if (questionNumber + 1 == questions.size()) {
+                end();
+            }
+
             Intent intent = new Intent(this, QuestionActivity.class);
             intent.putExtra("question", questionNumber + 1);
-            startActivity(intent);
+            startActivity(intent);*/
+            end();
         });
+
+        first.setText(answers.get(0));
 
         second.setOnClickListener(unused -> {
             score += 1;
             maxScore += 3;
 
+            /*if (questionNumber + 1 == questions.size()) {
+                end();
+            }
+
             Intent intent = new Intent(this, QuestionActivity.class);
             intent.putExtra("question", questionNumber + 1);
-            startActivity(intent);
+            startActivity(intent);*/
+            end();
         });
 
         third.setOnClickListener(unused -> {
             score += 2;
             maxScore += 3;
 
+            /*Intent intent = new Intent(this, QuestionActivity.class);
+            intent.putExtra("question", questionNumber + 1);
+
+            if (questionNumber + 1 == questions.size()) {
+                end();
+            }
+
             Intent intent = new Intent(this, QuestionActivity.class);
             intent.putExtra("question", questionNumber + 1);
-            startActivity(intent);
+
+
+            startActivity(intent);*/
+            end();
         });
 
         fourth.setOnClickListener(unused -> {
             score += 3;
             maxScore += 3;
 
+            /*if (questionNumber + 1 == questions.size()) {
+                end();
+            }
+
             Intent intent = new Intent(this, QuestionActivity.class);
             intent.putExtra("question", questionNumber + 1);
-            startActivity(intent);
+            startActivity(intent);*/
+            end();
         });
 
-        questionText.setText(questions.get(questionNumber).getQuestion());
+
 
 
 
@@ -108,10 +146,24 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     public void end() {
-        Intent intent = new Intent(this, ResultActivity.class);
+        Log.d("tag", "ended");
+
+
+        //return intent;
+
+        Intent intent = new Intent(this, QuestionActivity.class);
+        intent.putExtra("question", questionNumber + 1);
+
+        if (questionNumber + 1 == questions.size()) {
+            intent = new Intent(this, ResultActivity.class);
+        }
+
+
         startActivity(intent);
 
-        finish();
+        //startActivity(intent);
+
+        //finish();
         //put code here that finishes the activity and launches the results page
     }
 }
