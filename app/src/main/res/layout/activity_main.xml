@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/gameName"
-        android:layout_width="347dp"
-        android:layout_height="78dp"
-        android:textSize="30sp"
+        android:layout_width="275dp"
+        android:layout_height="92dp"
+        android:gravity="center"
+        android:text="What % Geoff Are You"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#1EB10E"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:fontFamily="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.193"
         tools:text="What Percent Geoff Are You" />
@@ -38,5 +44,21 @@
         app:layout_constraintTop_toBottomOf="@+id/gameName"
         app:layout_constraintVertical_bias="0.747"
         app:srcCompat="@android:drawable/ic_media_play" />
+
+    <ImageView
+        android:id="@+id/geoffImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/startButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameName"
+        app:srcCompat="@drawable/geoff" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
