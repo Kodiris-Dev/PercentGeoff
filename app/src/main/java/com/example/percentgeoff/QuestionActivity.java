@@ -30,7 +30,7 @@ public class QuestionActivity extends AppCompatActivity {
             setUpQuestions();
         }
 
-        if (questionNumber == questions.size()) {
+        if (questionNumber >= questions.size() || questionNumber < 0) {
             end();
         }
 
@@ -88,7 +88,7 @@ public class QuestionActivity extends AppCompatActivity {
      */
     public void setUpQuestions() {
 
-        //FILL OUT LATER
+        //FILL OUT MORE LATER
         List<String> firstAnswers = new ArrayList<>();
         firstAnswers.add("Python");
         firstAnswers.add("Other");
@@ -108,6 +108,9 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     public void end() {
+        Intent intent = new Intent(this, ResultActivity.class);
+        startActivity(intent);
+
         finish();
         //put code here that finishes the activity and launches the results page
     }
