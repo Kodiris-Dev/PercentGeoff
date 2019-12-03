@@ -61,4 +61,3 @@
             android:layout_height="wrap_content"
             android:text='1. "Answer"' />
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
