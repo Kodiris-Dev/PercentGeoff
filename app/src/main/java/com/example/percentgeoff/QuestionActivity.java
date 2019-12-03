@@ -35,9 +35,9 @@ public class QuestionActivity extends AppCompatActivity {
             setUpQuestions();
         }
 
-        /*if (questionNumber == questions.size()) {
+        if (questionNumber == questions.size()) {
             end();
-        }*/
+        }
 
         List<String> answers = questions.get(questionNumber).getAnswers();
 
@@ -149,6 +149,14 @@ public class QuestionActivity extends AppCompatActivity {
         Question secondQuestion = new Question("What are your feelings on Microsoft Office?", secondAnswers);
         questions.add(secondQuestion);
 
+        List<String> thirdAnswers = new ArrayList<>();
+        thirdAnswers.add("We should all be worshipping it");
+        thirdAnswers.add("I strongly like it");
+        thirdAnswers.add("I strongly dislike it");
+        thirdAnswers.add("How do you even copy and paste?");
+        Question thirdQuestion = new Question("What are your feelings on Windows?", thirdAnswers);
+        questions.add(thirdQuestion);
+
     }
 
     public void end() {
@@ -162,6 +170,8 @@ public class QuestionActivity extends AppCompatActivity {
 
         if (questionNumber + 1 == questions.size()) {
             intent = new Intent(this, ResultActivity.class);
+            intent.putExtra("maxScore", maxScore);
+            intent.putExtra("score", score);
         }
 
 
