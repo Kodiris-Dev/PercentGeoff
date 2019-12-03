@@ -1,15 +1,17 @@
 package com.example.percentgeoff;
 
+import java.util.List;
+
 public class Question {
     private String question;
-    private String[] answers;
+    private List<String> answers;
     private int answer;
-    Question(String q, String[] a) {
+    Question(String q, List<String> a) {
         question = q;
         answers = a;
     }
 
-    public String[] getAnswers() {
+    public List<String> getAnswers() {
         return answers;
     }
     public void setAnswer(int set) {
@@ -17,6 +19,9 @@ public class Question {
     }
     public int getAnswer() {
         return answer;
+    }
+    public String getQuestion() {
+        return question;
     }
 
 }
