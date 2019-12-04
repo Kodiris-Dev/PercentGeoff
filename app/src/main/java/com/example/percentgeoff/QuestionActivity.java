@@ -166,6 +166,14 @@ public class QuestionActivity extends AppCompatActivity {
         Question thirdQuestion = new Question("What are your feelings on Windows?", thirdAnswers);
         questions.add(thirdQuestion);
 
+        List<String> fourthAnswers = new ArrayList<>();
+        fourthAnswers.add("Formal Attire");
+        fourthAnswers.add("Ripped Jeans");
+        fourthAnswers.add("An intimidatingly sized baseball cap");
+        fourthAnswers.add("The tears of student’s cries for help on the MP");
+        Question fourthQuestion = new Question("What would you wear to a CS class on a warm sunny day in Champaign?", fourthAnswers);
+        questions.add(fourthQuestion);
+
     }
 
     public void end() {
