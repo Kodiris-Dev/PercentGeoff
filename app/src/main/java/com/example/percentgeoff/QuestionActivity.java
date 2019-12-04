@@ -174,6 +174,14 @@ public class QuestionActivity extends AppCompatActivity {
         Question fourthQuestion = new Question("What would you wear to a CS class on a warm sunny day in Champaign?", fourthAnswers);
         questions.add(fourthQuestion);
 
+        List<String> fifthAnswers = new ArrayList<>();
+        fifthAnswers.add("11 pipers piping");
+        fifthAnswers.add("11 Checkstyle errors");
+        fifthAnswers.add("11 Machine Projects");
+        fifthAnswers.add("Not enough TA’s for office hours");
+        Question fifthQuestion = new Question("On the 11th day of christmas my true love gave to me...", fifthAnswers);
+        questions.add(fifthQuestion);
+
     }
 
     public void end() {
