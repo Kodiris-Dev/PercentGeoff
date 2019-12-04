@@ -13,7 +13,7 @@ import java.util.List;
 
 public class QuestionActivity extends AppCompatActivity {
     static List<Question>  questions = new ArrayList<>();
-    static int score = 0;
+    int score;
     static int maxScore = 0;
 
     Button first;
@@ -28,25 +28,34 @@ public class QuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
         Intent oldIntent = getIntent();
-        questionNumber = oldIntent.getIntExtra("question", -1);
+        questionNumber = oldIntent.getIntExtra("question", 0);
+        Log.d("questionNum", "" + questionNumber);
 
 
         if (questionNumber == 0) {
             setUpQuestions();
+            maxScore = questions.size() * 3;
+            score = 0;
+        }
+        if (questionNumber == -1) {
+            questionNumber = 0;
+            score = 0;
         }
 
-        if (questionNumber == questions.size()) {
+        score = oldIntent.getIntExtra("score", 0);
+
+        /*if (questionNumber == questions.size()) {
             end();
-        }
+        }*/
 
         List<String> answers = questions.get(questionNumber).getAnswers();
 
         Log.d("tag", "didn't end, question: " + questionNumber + ", array size: " + questions.size());
 
-        Button first = findViewById(R.id.answer);
-        Button second = findViewById(R.id.answer1);
-        Button third = findViewById(R.id.answer2);
-        Button fourth = findViewById(R.id.answer3);
+        first = findViewById(R.id.answer);
+        second = findViewById(R.id.answer1);
+        third = findViewById(R.id.answer2);
+        fourth = findViewById(R.id.answer3);
 
         TextView questionText = findViewById(R.id.questionText);
 
@@ -54,7 +63,7 @@ public class QuestionActivity extends AppCompatActivity {
 
         first.setOnClickListener(unused -> {
             //score += 0;
-            maxScore += 3;
+            //maxScore += 3;
 
             /*if (questionNumber + 1 == questions.size()) {
                 end();
@@ -70,7 +79,7 @@ public class QuestionActivity extends AppCompatActivity {
 
         second.setOnClickListener(unused -> {
             score += 1;
-            maxScore += 3;
+            //maxScore += 3;
 
             /*if (questionNumber + 1 == questions.size()) {
                 end();
@@ -86,7 +95,7 @@ public class QuestionActivity extends AppCompatActivity {
 
         third.setOnClickListener(unused -> {
             score += 2;
-            maxScore += 3;
+            //maxScore += 3;
 
             /*Intent intent = new Intent(this, QuestionActivity.class);
             intent.putExtra("question", questionNumber + 1);
@@ -107,7 +116,7 @@ public class QuestionActivity extends AppCompatActivity {
 
         fourth.setOnClickListener(unused -> {
             score += 3;
-            maxScore += 3;
+            //maxScore += 3;
 
             /*if (questionNumber + 1 == questions.size()) {
                 end();
@@ -167,6 +176,7 @@ public class QuestionActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, QuestionActivity.class);
         intent.putExtra("question", questionNumber + 1);
+        intent.putExtra("score", score);
 
         if (questionNumber + 1 == questions.size()) {
             intent = new Intent(this, ResultActivity.class);
@@ -177,9 +187,10 @@ public class QuestionActivity extends AppCompatActivity {
 
         startActivity(intent);
 
+
         //startActivity(intent);
 
-        //finish();
+        finish();
         //put code here that finishes the activity and launches the results page
     }
 }

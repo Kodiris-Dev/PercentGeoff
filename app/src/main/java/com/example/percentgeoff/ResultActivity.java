@@ -28,7 +28,8 @@ public class ResultActivity extends AppCompatActivity {
 
 
         restart.setOnClickListener(unused -> {
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, QuestionActivity.class);
+            intent.putExtra("question", -1);
             startActivity(intent);
         });
     }
