@@ -193,6 +193,14 @@ public class QuestionActivity extends AppCompatActivity {
         Question sixthQuestion = new Question("What’s your favorite way to declare a List in Java?", sixthAnswers);
         questions.add(sixthQuestion);
 
+        List<String> seventhAnswers = new ArrayList<>();
+        sixthAnswers.add("Piazza");
+        sixthAnswers.add("Queue");
+        sixthAnswers.add("Forum");
+        sixthAnswers.add("Office Hours");
+        Question seventhQuestion = new Question("What’s your favorite platform for students to get help on assignments?", seventhAnswers);
+        questions.add(seventhQuestion);
+
     }
 
     public void end() {
