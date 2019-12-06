@@ -23,6 +23,8 @@ public class QuestionActivity extends AppCompatActivity {
 
     int questionNumber;
 
+    static boolean firstTime = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,10 +34,11 @@ public class QuestionActivity extends AppCompatActivity {
         Log.d("questionNum", "" + questionNumber);
 
 
-        if (questionNumber == 0) {
+        if (firstTime) {
             setUpQuestions();
             maxScore = questions.size() * 3;
             score = 0;
+            firstTime = false;
         }
         if (questionNumber == -1) {
             questionNumber = 0;
