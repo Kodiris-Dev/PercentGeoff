@@ -40,10 +40,10 @@ public class QuestionActivity extends AppCompatActivity {
             score = 0;
             firstTime = false;
         }
-        if (questionNumber == -1) {
+        /*if (questionNumber == -1) {
             questionNumber = 0;
             score = 0;
-        }
+        }*/
 
         score = oldIntent.getIntExtra("score", 0);
 
@@ -194,12 +194,36 @@ public class QuestionActivity extends AppCompatActivity {
         questions.add(sixthQuestion);
 
         List<String> seventhAnswers = new ArrayList<>();
-        sixthAnswers.add("Piazza");
-        sixthAnswers.add("Queue");
-        sixthAnswers.add("Forum");
-        sixthAnswers.add("Office Hours");
+        seventhAnswers.add("Piazza");
+        seventhAnswers.add("Queue");
+        seventhAnswers.add("Forum");
+        seventhAnswers.add("Office Hours");
         Question seventhQuestion = new Question("What’s your favorite platform for students to get help on assignments?", seventhAnswers);
         questions.add(seventhQuestion);
+
+        List<String> eighthAnswers = new ArrayList<>();
+        eighthAnswers.add("Make memes");
+        eighthAnswers.add("Write Reddit Posts");
+        eighthAnswers.add("Talk about the issue");
+        eighthAnswers.add("Join scientista");
+        Question eighthQuestion = new Question("What would you do if you wanted to do more than tweet about diversity?", eighthAnswers);
+        questions.add(eighthQuestion);
+
+        List<String> ninthAnswers = new ArrayList<>();
+        ninthAnswers.add("Very small, twenty people or less");
+        ninthAnswers.add("Average sized, with maybe a few hundred or less");
+        ninthAnswers.add("Pretty big, maybe almost a thousand");
+        ninthAnswers.add("Huge! As many as can fit in UIUC’s basketball stadium");
+        Question ninthQuestion = new Question("If you were a teacher, what would your ideal class size be?", ninthAnswers);
+        questions.add(ninthQuestion);
+
+        List<String> tenthAnswers = new ArrayList<>();
+        tenthAnswers.add("Emacs");
+        tenthAnswers.add("Microsoft Word");
+        tenthAnswers.add("Google Docs");
+        tenthAnswers.add("Vim");
+        Question tenthQuestion = new Question("What’s your favorite Text Editor?", tenthAnswers);
+        questions.add(tenthQuestion);
 
     }
 
