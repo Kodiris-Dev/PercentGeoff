@@ -163,8 +163,8 @@ public class QuestionActivity extends AppCompatActivity {
 
         List<String> thirdAnswers = new ArrayList<>();
         thirdAnswers.add("We should all be worshipping it");
-        thirdAnswers.add("I strongly like it");
-        thirdAnswers.add("I strongly dislike it");
+        thirdAnswers.add("I like it");
+        thirdAnswers.add("I dislike it");
         thirdAnswers.add("How do you even copy and paste?");
         Question thirdQuestion = new Question("What are your feelings on Windows?", thirdAnswers);
         questions.add(thirdQuestion);
@@ -184,6 +184,14 @@ public class QuestionActivity extends AppCompatActivity {
         fifthAnswers.add("Not enough TA’s for office hours");
         Question fifthQuestion = new Question("On the 11th day of christmas my true love gave to me...", fifthAnswers);
         questions.add(fifthQuestion);
+
+        List<String> sixthAnswers = new ArrayList<>();
+        sixthAnswers.add("ArrayList list = new ArrayList<>();");
+        sixthAnswers.add("LinkedList list = new LinkedList<>();");
+        sixthAnswers.add("List list = new ArrayList<>();");
+        sixthAnswers.add("List list = new LinkedList<>();");
+        Question sixthQuestion = new Question("What’s your favorite way to declare a List in Java?", sixthAnswers);
+        questions.add(sixthQuestion);
 
     }
 

@@ -22,14 +22,14 @@ public class ResultActivity extends AppCompatActivity {
 
         Intent oldIntent = getIntent();
         int maxScore = oldIntent.getIntExtra("maxScore", -1);
-        int score= oldIntent.getIntExtra("score", -1) * 100;
+        int score = oldIntent.getIntExtra("score", -1) * 100;
 
         resultText.setText("You are " + score / maxScore + "% Geoff");
 
 
         restart.setOnClickListener(unused -> {
-            Intent intent = new Intent(this, QuestionActivity.class);
-            intent.putExtra("question", -1);
+            Intent intent = new Intent(this, MainActivity.class);
+            //intent.putExtra("question", 0);
             startActivity(intent);
         });
     }
