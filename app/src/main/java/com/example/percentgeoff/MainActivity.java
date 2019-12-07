@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, QuestionActivity.class);
             intent.putExtra("question", 0);
             startActivity(intent);
+            finish();
         });
     }
 }
