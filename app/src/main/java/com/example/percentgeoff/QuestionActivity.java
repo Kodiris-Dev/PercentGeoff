@@ -118,7 +118,7 @@ public class QuestionActivity extends AppCompatActivity {
         secondAnswers.add("Really don't like it");
         secondAnswers.add("It murdered my wife, cat, and dog");
         Question secondQuestion = new Question("What are your feelings on Microsoft Office?", secondAnswers);
-        //questions.add(secondQuestion);
+        questions.add(secondQuestion);
 
         List<String> thirdAnswers = new ArrayList<>();
         thirdAnswers.add("We should all be worshipping it");
@@ -126,7 +126,7 @@ public class QuestionActivity extends AppCompatActivity {
         thirdAnswers.add("I dislike it");
         thirdAnswers.add("How do you even copy and paste?");
         Question thirdQuestion = new Question("What are your feelings on Windows?", thirdAnswers);
-        //questions.add(thirdQuestion);
+        questions.add(thirdQuestion);
 
         List<String> fourthAnswers = new ArrayList<>();
         fourthAnswers.add("Formal Attire");
@@ -134,7 +134,7 @@ public class QuestionActivity extends AppCompatActivity {
         fourthAnswers.add("An intimidatingly sized baseball cap");
         fourthAnswers.add("The tears of student’s cries for help on the MP");
         Question fourthQuestion = new Question("What would you wear to a CS class on a warm sunny day in Champaign?", fourthAnswers);
-        //questions.add(fourthQuestion);
+        questions.add(fourthQuestion);
 
         List<String> fifthAnswers = new ArrayList<>();
         fifthAnswers.add("11 pipers piping");
@@ -142,7 +142,7 @@ public class QuestionActivity extends AppCompatActivity {
         fifthAnswers.add("11 Machine Projects");
         fifthAnswers.add("Not enough TA’s for office hours");
         Question fifthQuestion = new Question("On the 11th day of christmas my true love gave to me...", fifthAnswers);
-        //questions.add(fifthQuestion);
+        questions.add(fifthQuestion);
 
         List<String> sixthAnswers = new ArrayList<>();
         sixthAnswers.add("ArrayList list = new ArrayList<>();");
@@ -150,7 +150,7 @@ public class QuestionActivity extends AppCompatActivity {
         sixthAnswers.add("List list = new ArrayList<>();");
         sixthAnswers.add("List list = new LinkedList<>();");
         Question sixthQuestion = new Question("What’s your favorite way to declare a List in Java?", sixthAnswers);
-        //questions.add(sixthQuestion);
+        questions.add(sixthQuestion);
 
         List<String> seventhAnswers = new ArrayList<>();
         seventhAnswers.add("Piazza");
@@ -158,7 +158,7 @@ public class QuestionActivity extends AppCompatActivity {
         seventhAnswers.add("Forum");
         seventhAnswers.add("Office Hours");
         Question seventhQuestion = new Question("What’s your favorite platform for students to get help on assignments?", seventhAnswers);
-        //questions.add(seventhQuestion);
+        questions.add(seventhQuestion);
 
         List<String> eighthAnswers = new ArrayList<>();
         eighthAnswers.add("Make memes");
@@ -166,7 +166,7 @@ public class QuestionActivity extends AppCompatActivity {
         eighthAnswers.add("Talk about the issue");
         eighthAnswers.add("Join scientista");
         Question eighthQuestion = new Question("What would you do if you wanted to do more than tweet about diversity?", eighthAnswers);
-        //questions.add(eighthQuestion);
+        questions.add(eighthQuestion);
 
         List<String> ninthAnswers = new ArrayList<>();
         ninthAnswers.add("Very small, twenty people or less");
@@ -174,7 +174,7 @@ public class QuestionActivity extends AppCompatActivity {
         ninthAnswers.add("Pretty big, maybe almost a thousand");
         ninthAnswers.add("Huge! As many as can fit in UIUC’s basketball stadium");
         Question ninthQuestion = new Question("If you were a teacher, what would your ideal class size be?", ninthAnswers);
-        //questions.add(ninthQuestion);
+        questions.add(ninthQuestion);
 
         List<String> tenthAnswers = new ArrayList<>();
         tenthAnswers.add("Emacs");
@@ -182,7 +182,7 @@ public class QuestionActivity extends AppCompatActivity {
         tenthAnswers.add("Google Docs");
         tenthAnswers.add("Vim");
         Question tenthQuestion = new Question("What’s your favorite Text Editor?", tenthAnswers);
-        //questions.add(tenthQuestion);
+        questions.add(tenthQuestion);
 
     }
 
