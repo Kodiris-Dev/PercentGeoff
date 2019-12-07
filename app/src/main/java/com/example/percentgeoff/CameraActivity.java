@@ -15,6 +15,10 @@ public class CameraActivity extends AppCompatActivity {
     static final int REQUEST_IMAGE_CAPTURE = 1;
     ImageView userPhoto;
 
+    Bitmap imageBitmap;
+
+    Bundle pictureBundle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +39,9 @@ public class CameraActivity extends AppCompatActivity {
             Intent intent = new Intent(this, ResultActivity.class);
             intent.putExtra("score", score);
             intent.putExtra("maxScore", maxScore);
+
+            intent.putExtra("pictureBundle", pictureBundle);
+
             startActivity(intent);
         });
     }
@@ -50,8 +57,8 @@ public class CameraActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            pictureBundle = data.getExtras();
+            imageBitmap = (Bitmap) pictureBundle.get("data");
             userPhoto.setImageBitmap(imageBitmap);
         }
     }
