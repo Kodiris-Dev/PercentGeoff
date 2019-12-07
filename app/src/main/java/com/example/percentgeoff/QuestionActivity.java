@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
@@ -65,16 +66,6 @@ public class QuestionActivity extends AppCompatActivity {
         questionText.setText(questions.get(questionNumber).getQuestion());
 
         first.setOnClickListener(unused -> {
-            //score += 0;
-            //maxScore += 3;
-
-            /*if (questionNumber + 1 == questions.size()) {
-                end();
-            }
-
-            Intent intent = new Intent(this, QuestionActivity.class);
-            intent.putExtra("question", questionNumber + 1);
-            startActivity(intent);*/
             end();
         });
 
@@ -82,15 +73,6 @@ public class QuestionActivity extends AppCompatActivity {
 
         second.setOnClickListener(unused -> {
             score += 1;
-            //maxScore += 3;
-
-            /*if (questionNumber + 1 == questions.size()) {
-                end();
-            }
-
-            Intent intent = new Intent(this, QuestionActivity.class);
-            intent.putExtra("question", questionNumber + 1);
-            startActivity(intent);*/
             end();
         });
 
@@ -98,20 +80,6 @@ public class QuestionActivity extends AppCompatActivity {
 
         third.setOnClickListener(unused -> {
             score += 2;
-            //maxScore += 3;
-
-            /*Intent intent = new Intent(this, QuestionActivity.class);
-            intent.putExtra("question", questionNumber + 1);
-
-            if (questionNumber + 1 == questions.size()) {
-                end();
-            }
-
-            Intent intent = new Intent(this, QuestionActivity.class);
-            intent.putExtra("question", questionNumber + 1);
-
-
-            startActivity(intent);*/
             end();
         });
 
@@ -119,15 +87,6 @@ public class QuestionActivity extends AppCompatActivity {
 
         fourth.setOnClickListener(unused -> {
             score += 3;
-            //maxScore += 3;
-
-            /*if (questionNumber + 1 == questions.size()) {
-                end();
-            }
-
-            Intent intent = new Intent(this, QuestionActivity.class);
-            intent.putExtra("question", questionNumber + 1);
-            startActivity(intent);*/
             end();
         });
 
@@ -238,16 +197,21 @@ public class QuestionActivity extends AppCompatActivity {
         intent.putExtra("score", score);
 
         if (questionNumber + 1 == questions.size()) {
-            intent = new Intent(this, ResultActivity.class);
+            intent = new Intent(this, CameraActivity.class);
             intent.putExtra("maxScore", maxScore);
             intent.putExtra("score", score);
+
+
+
+
+
         }
 
 
-        startActivity(intent);
-
-
         //startActivity(intent);
+
+
+        startActivity(intent);
 
         finish();
         //put code here that finishes the activity and launches the results page
