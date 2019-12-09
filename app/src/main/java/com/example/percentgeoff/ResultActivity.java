@@ -54,7 +54,7 @@ public class ResultActivity extends AppCompatActivity {
 
         notGeoff.setImageBitmap(display);
 
-        resultText.setText("You are " + score / maxScore + "% Geoff");
+        resultText.setText(score / maxScore + "% Geoff");
 
 
         restart.setOnClickListener(unused -> {
