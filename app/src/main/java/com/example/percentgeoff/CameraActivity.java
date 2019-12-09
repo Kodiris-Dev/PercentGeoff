@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -30,13 +31,21 @@ public class CameraActivity extends AppCompatActivity {
 
     String currentPhotoPath;
 
+    ImageButton photoButton;
+
+    Button resultsButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
 
-        ImageButton photoButton = findViewById(R.id.imageButton);
-        Button resultsButton = findViewById(R.id.viewResults);
+        photoButton = findViewById(R.id.imageButton);
+        resultsButton = findViewById(R.id.viewResults);
+
+        resultsButton.setVisibility(View.INVISIBLE);
+
+
 
         Intent oldIntent = getIntent();
 
@@ -71,6 +80,8 @@ public class CameraActivity extends AppCompatActivity {
             pictureBundle = data.getExtras();
             imageBitmap = (Bitmap) pictureBundle.get("data");
             userPhoto.setImageBitmap(imageBitmap);
+
+            resultsButton.setVisibility(View.VISIBLE);
         }
     }
 
